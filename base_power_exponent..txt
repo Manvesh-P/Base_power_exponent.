@@ -1,0 +1,45 @@
+
+base = float(input("enter the base: "))
+expo = float(input("enter the exponent: "))
+ 
+if base >= 0 and expo >= 0:
+    res = base**expo
+    print("The base power exponent is %d"%res)
+    
+elif base > 0 and expo < 0:
+    expo1 = -expo
+    res = 1
+    while expo1 != 0:
+        res = res * base
+        expo1 -= 1
+    fres = 1 / res
+    print("The base to the exponent is :%f"%fres)
+        
+        
+elif base < 0 and expo > 0:
+    if expo % 2 == 0:
+        base1 = -base
+        res = base1**expo
+        print("The base power exponent is %d"%res)
+    else:
+        base1 = -base
+        res = base1**expo
+        res1 = -res
+        print("The base power exponent is %d"%res1)
+
+    
+elif base < 0 and expo < 0:
+    expo1 = -expo
+    base1 = -base
+    if expo1 % 2 == 0:
+        res = base1**expo1
+        fres = 1 / res
+        print("The base to the exponent is %f"%fres)
+    else:
+        res = base1**expo1
+        res1 = 1 / res
+        fres = -res1
+        print("The base to the exponent is %f"%fres)
+    
+else:
+    pass
